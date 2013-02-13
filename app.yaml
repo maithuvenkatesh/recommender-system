@@ -5,10 +5,13 @@ api_version: 1
 threadsafe: no
 
 handlers:
-  
+
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
+
+- url: /saveGame
+  script: saveGame.py
 
 - url: .*
   script: main.app
