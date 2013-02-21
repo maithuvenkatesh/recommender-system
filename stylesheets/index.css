@@ -1,0 +1,19 @@
+.btn
+{
+	
+	width: 100%;
+	border-radius: 10px; /* rounded edge */
+	-moz-border-radius:10px;  /* for Firefox */
+	-webkit-border-radius:10px; /* for Webkit-Browsers */
+}
+
+#container
+{
+	width: 500px;
+	height: 600px;
+}
+
+h1
+{
+	font-family: 'Squada One', cursive;
+}
