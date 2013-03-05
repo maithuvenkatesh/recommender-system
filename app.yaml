@@ -23,6 +23,9 @@ handlers:
 - url: /saveGame
   script: saveGame.app
 
+- url: /games
+  script: displayGames.app
+
 - url: /*
   script: main.app
 

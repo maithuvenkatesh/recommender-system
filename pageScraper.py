@@ -8,14 +8,16 @@ baseurl1 = "http://uk.gamespot.com/games.html?platform="
 baseurl2 = "&mode=all&sort=views&dlx_type=all&sortdir=asc&official=all&page="
 
 #List of platforms
-platforms = {"xbox360":1029, "pc":5, "playstation3":1028}
+platforms = {"xbox360":1029}# "pc":5, "playstation3":1028}
 
 for platform in platforms:
 	games = []
+	game
 	pageCounter = 0
 	noResults = False
 
-	while pageCounter < 1:
+	while pageCounter < 60:
+		print pageCounter
 		pageUrl = baseurl1 + str(platforms[platform]) + baseurl2 + str(pageCounter)
 		pageCounter += 1
 
@@ -37,12 +39,14 @@ for platform in platforms:
 				out["genre"] = details[0].string
 				out["gamespotScore"] = details[1].string
 				releaseDate = details[2].string
-				out["year"] = releaseDate[8:12]
+				out["year"] = releaseDate[-4:]
+				out["platform"] = platform
 				if out["gamespotScore"]:
-					print urllib2.urlopen("http://localhost:8081/saveGame",urllib.urlencode(out))
+					urllib2.urlopen("http://localhost:8081/saveGame",urllib.urlencode(out))
+
 					#games.push({title: title, genre: genre, score:score, url:gameUrl})
 
-	# Loop through games in page and get more details
+	#Loop through games in page and get more details
 	#for game in games:
 		#gameurl = game[url]
 		#gameDetailsSoup = BeautifulSoup(urllib2.urlopen(gameUrl))
