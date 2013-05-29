@@ -18,6 +18,10 @@ class SaveGameHandler(webapp2.RequestHandler):
 			newGame.Platform = self.request.get('platform')
 			newGame.GamespotScore = float(self.request.get('gamespotScore'))
 			newGame.Url = self.request.get('url')
+			newGame.ImageUrl = self.request.get('imgUrl')
+			newGame.Rating = self.request.get('rating')
+			newGame.Publisher = self.request.get('publisher')
+			newGame.Developer = self.request.get('developer')
 			newGame.put()			
 		except ValueError:
 			print 'Could not convert year to int'

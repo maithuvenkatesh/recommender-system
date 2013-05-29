@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+	<meta charset="utf-8">
+
+	<link href="http://bootswatch.com/superhero/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
 	<div id="container">
-		<ul>
-			{% for game in games %}
-			<li>
+		{% for game in games %}
+			<div class="game" id="{{game.Key}}">
 				{{game.Title}}
-			</li>
-			{% endfor %}
-		</ul>
+			</div>
+		{% endfor %}
 	</div>
 </body>
 
